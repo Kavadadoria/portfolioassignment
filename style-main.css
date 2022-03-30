@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: black;
+}
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 400%;
+  color: white;
+  margin: 0 0 0 5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+nav {
+  margin: 0;
+  padding: 0;
+  background-color: #3a2f9e;
+}
+nav ul {
+  margin-left: 0;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+nav ul li {
+  background-color: #3a2f9e;
+  color: white;
+  text-align: center;
+  font-size: 80%;
+  font-weight: bold;
+  padding: 2% 0;
+  list-style-type: none;
+}
+
+nav ul li:hover {
+  background: #b9d8c2ff;
+  color: black;
+}
+
+blockquote {
+  margin: 0 1.5em;
+}
+
+small {
+  font-size: 75%;
+}
+
+big {
+  font-size: 125%;
+}
+
+/* Global layouts */
+@media screen and (min-width: 700px) {
+  .two-column {
+    column-count: 2;
+    column-gap: 2.4em;
+  }
+}
+
+/* Global buttons */
+.content-button {
+  padding: 0.5em 1em;
+  border: 3px solid #2e5f24;
+  font-weight: 600;
+}
+
+a.content-button {
+  color: white;
+  text-decoration: none;
+}
+
+a.content-button:focus,
+a.content-button:hover {
+  background: #2e5f24;
+  color: #fffced;
+}
+
+.site {
+  margin: 1em;
+}
+
+.title,
+.page-title,
+.main-content,
+.sidebar,
+.footer-content {
+  padding: 1em;
+  color: black;
+}
+
+.title {
+  background-color: #26e2d9;
+}
+
+.page-title {
+  background-color: #3a2f9e;
+}
+
+.main-content {
+  background-color: #70bf40;
+}
+
+.sidebar {
+  background-color: #ecae63;
+}
+
+.footer-content {
+  background-color: #0265c0;
+}
+
+.site {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: auto 1fr 3fr; */
+  grid-template-areas:
+    "title title"
+    "masthead main"
+    "sidebar main"
+    "footer footer";
+}
+
+@media screen and (min-width: 600px) {
+  .site {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+      "title title title"
+      /* "masthead masthead main" */
+      "masthead main main"
+      "sidebar main main"
+      "footer footer footer";
+    /* "sidebar footer main"; */
+  }
+}
+
+.title {
+  grid-area: masthead;
+}
+
+.page-title {
+  grid-area: title;
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.footer-content {
+  grid-area: footer;
+}
